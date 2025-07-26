@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Leme Oficial | Orações e Fé</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex flex-col items-center justify-center p-6">
 
+  <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-3xl w-full text-center hover:scale-[1.02] transition-transform duration-300">
+    <h1 class="text-4xl font-extrabold text-purple-800 mb-2">Felipe Leme Oficial</h1>
+    <p class="text-xl text-blue-700 font-semibold mb-4">Orações e Fé</p>
+    <p class="text-gray-700 mb-6">Bem-vindo ao seu espaço de espiritualidade, fé e esperança. Aqui você encontra orações poderosas, mensagens edificantes e reflexões para fortalecer sua conexão com Deus.</p>
+
+    <a href="https://www.youtube.com/@FelipeLemeOficial/shorts" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full mb-6 transition duration-300">
+      🌟 Acessar Canal no YouTube
+    </a>
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">🎥 Vídeos Recentes</h2>
+    <ul class="text-left text-blue-700 mb-8 space-y-2">
+      <li><a href="https://www.youtube.com/watch?v=example1" target="_blank" class="hover:underline">⚠️ DEUS OUVIU SEU DESESPERO! MENSAGEM DOS ANJOS</a></li>
+      <li><a href="https://www.youtube.com/watch?v=example2" target="_blank" class="hover:underline">🙏 ORAÇÃO DE PODER QUE TRANSFORMA TUDO</a></li>
+      <li><a href="https://www.youtube.com/watch?v=example3" target="_blank" class="hover:underline">💬 A ÚLTIMA ESPERANÇA: História REAL de Cura</a></li>
+      <li><a href="https://www.youtube.com/@FelipeLemeOficial/videos" target="_blank" class="text-indigo-600 hover:underline font-semibold">Ver todos os vídeos &rarr;</a></li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-purple-800 mb-4">🙏 Copilot da Fé</h2>
+    <p class="text-gray-700 mb-4">Digite um sentimento ou situação e receba uma oração personalizada para fortalecer sua alma.</p>
+    <textarea id="tema" class="w-full p-4 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 resize-y min-h-[100px] text-gray-800 mb-4" placeholder="Ex: paz interior, gratidão, proteção da família..."></textarea>
+    <button onclick="gerarOracao()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+      Gerar Oração
+    </button>
+    <div id="saida" class="mt-6 p-6 bg-purple-50 border border-purple-300 rounded-lg text-gray-800 text-left whitespace-pre-wrap shadow-md hidden"></div>
+  </div>
+
+  <footer class="mt-10 text-gray-600 text-sm text-center">
+    &copy; 2025 Felipe Leme Oficial. Criado com fé e propósito.
+  </footer>
+
+  <script>
+    function gerarOracao() {
+      const tema = document.getElementById('tema').value.trim();
+      const saida = document.getElementById('saida');
+
+      if (!tema) {
+        saida.textContent = 'Por favor, digite um tema para gerar uma oração.';
+        saida.classList.remove('hidden');
+        return;
+      }
+
+      const oracoes = [
+        `Senhor, neste momento de busca por ${tema}, peço que Tua luz ilumine meu caminho. Que eu encontre paz, força e sabedoria para enfrentar os desafios com fé e esperança. Amém.`,
+        `Deus amado, envolva-me com Tua presença enquanto clamo por ${tema}. Que meu coração se encha de serenidade e minha alma se fortaleça na Tua graça. Amém.`,
+        `Pai Celestial, venho pedir por ${tema}. Que Tua bondade me guie, que Tua paz me envolva, e que eu nunca perca a fé. Amém.`
+      ];
+
+      const oracao = oracoes[Math.floor(Math.random() * oracoes.length)];
+      saida.textContent = oracao;
+      saida.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
